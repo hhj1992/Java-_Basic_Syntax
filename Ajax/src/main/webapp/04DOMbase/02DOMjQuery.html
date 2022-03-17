@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="EUC-KR">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="/Ajax/10common/logUtil03.js"></script>
+	 <script type="text/javascript">
+	 
+		//field
+	 	var count = 1;
+	 	function onClickAppend(e){
+			//console.log("z");
+			count++;
+			//console.log(e.currentTarget);
+			$("body").append("<div id=append"+count+">이순신"+count+"</div>");
+		};
+		function onAppendAddRemove() {
+			count++;
+			$("body").append("<div id=append"+count+">이순신"+count+"<input type='button' class ='removeBtn' onClick='javascript:remove("+count+")' value='삭제'/></div>");
+		}
+		$(document).ready(function(){
+			//console.log("hello");
+			var btnAppend = $("input:button")[0];
+			var btnAppendRemove = $("input:button")[1];
+			
+			$(btnAppend).on("click" ,onClickAppend);
+			$(btnAppendRemove).on("click" ,onAppendAddRemove);
+
+		})
+	 	function remove(idIndex) {
+				$("#append"+idIndex).remove();
+				alert("삭제완료됨");
+			}
+		
+	</script>
+</head>
+
+<body>
+	<input type="button" value="추가"/>
+	<input type="button" value="추가,삭제버튼같이 만들기"/>
+
+	<div id="append1">이순신1</div>
+	
+	<div id="console" style="border: 3px solid #F00" >
+		log 출력 :  <br/>
+	</div>
+	
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	
+	<script src="../javascript/jquery-2.1.4.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		
+		$(document).ready(function() {
+			 
+			 /*
+			 // 1번
+			 var obj = $("p");
+	         alert(obj);
+	
+	         var text = obj.html();
+	         alert(text);
+	
+	         var p01 = $(obj[0]);
+	         alert("1번째 : \n\n" + p01.html());
+	         alert("2번째 : \n\n" + $(obj[1]).html());
+	         alert("3번째 : \n\n" + $(obj[2]).html());
+	
+	         alert("$('p',document.forms[1])의 결과는....\n\n "+$('p',document.forms[1]).html());// 쓸일없음. 보고 잊어버리셈
+	         alert("$('p',$('form')[0])의 결과는....\n\n "+$('p',$('form')[0]).html());
+	         alert("$('p',$('form')[1])의 결과는....\n\n "+$('p',$('form')[1]).html());
+	         */
+	         
+	         /*
+	         //2번
+	         alert("변경전 : \n\n"+$("form[name='test01']").html());
+	         $("form[name='test01']").html("<h1>변경되었나요..</h1>");
+	         $("form[name='test01']").css("color","red");
+	         
+	         alert("변경전 : \n\n"+$("form p span").html());
+	         $("form p span").html("<h1>다시 확인 변경되었나요..</h1>");
+	         $("form p span").css("color","red");
+			 //*/
+	         
+	         
+	         /*
+	         //3번
+	         alert("$('form')[0] : \n\n"+$($('form')[0]).html());
+	         alert("$('form')[0] : \n\n"+$($('form')[0]).html().trim());
+	         alert("$('form')[1] : \n\n"+$($('form')[1]).html());
+	         alert("$('form')[1] : \n\n"+$($('form')[1]).html().trim());
+	
+	         alert("$('form')[0] : \n\n"+$($('form')[0]).text());
+	         alert("$('form')[0] : \n\n"+$($('form')[0]).text().trim());
+	         alert("$('form')[1] : \n\n"+$($('form')[1]).text());
+	         alert("$('form')[1] : \n\n"+$($('form')[1]).text().trim());
+	         */
+	         
+	         ///*
+			 // 4번
+	         alert("변경전 : \n\n" + $('h1').text());
+	         $('h1').text("변경되었나요..");
+	         $('h1').css("color","red");
+	         
+	         alert("변경전 : \n\n" + $('div').text());
+	         $('div').text("다시 확인 변경되었나요..");
+	         $('div').css("color","red");
+			 //*/
+         
+         
+		});
+		
+		
+	</script>
+</head>
+<body>
+   <h1>javascript Framework : jQuery 학습</h1>
+	<h2>사용법(?)에 익숙해 지자 </h2>
+      
+   <form name="test01">
+      <p>jQuery 란 ? </p>
+   </form>
+   
+   <div>
+      <p> javascript Framework</p>
+   </div>
+   
+   <form name="test02">
+      <p>Framework 이란 ?
+         <span> 확장,재사용 가능한 Lib</span>
+      </p>
+   </form>
+   
+</body>
+</html>

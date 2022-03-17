@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<HTML lang="ko">
+ <HEAD>
+<meta charset="EUC-KR">
+  <TITLE> 08input01.html </TITLE>
+  
+ </HEAD>
+
+ <BODY>
+
+ <form action="http://127.0.0.1:8080/Html5/abc.do" method="get">
+
+ 이름 1 : <input type="text" name="name01" value="홍길동" /><br/>
+ 이름 2 : <input type="text" name="name02" /><br/>
+ <label for="name3">이름 3 : </label>
+ <input type="text" id="name3" name="name03" /><br/>
+
+ <hr/>
+
+ 취미는? <br>
+
+ 독서 <input type="checkbox" name="reading" value="reading" checked="checked"/>
+ 야구 <input type="checkbox" name="baseball" value="baseball" checked/>
+ 축구 <input type="checkbox" name="football" value="football" />
+
+ <hr>
+
+ 성별? <br>
+ 남자 <input type="radio" name="sex" value="male" checked/>
+ 여자 <input type="radio" name="sex" value="female"/>
+
+ <hr/>
+
+ 사진: <input type="file" name="picture"/><br/>
+ 화면에는 안보임 : <input type="hidden" name="hideData" value="숨긴Data"/><br/>
+
+ <hr/>
+
+ 비밀번호01 : <input type="password" name="password01" value="1234"/><br/>
+ 비밀번호02 : <input type="password" name="password02"/><br/>
+
+ <hr/>
+
+ <input type="reset" value="다시쓰기"/><br/>
+ <input type="submit" value="Data보내기"/><br/>
+ <input type="button" value="그냥 button"/><br/>
+
+ </form>
+
+ <hr size="5" color="red"/>
+
+ <h3>위의 input Tag는 HTML4에서 지원/ 아래는 HTML5에서 추가지원하는 type</hr3>
+
+ <hr size="5" color="red"/>
+
+ input type="color" : <input type="color"/><br/>
+ input type="date" : <input type="date"/><br/>
+ input type="datetime" : <input type="datetime"/><br/>
+ input type="datetime-local" : <input type="datetime-local"/><br/>
+ input type="email" : <input type="email"/><br/>
+ input type="month" : <input type="month"/><br/>
+ input type="number" : <input type="number"/><br/>
+ input type="range" : <input type="range"/><br/>
+ input type="search" : <input type="search"/><br/>
+ input type="tel" : <input type="tel"/><br/>
+ input type="time" : <input type="time"/><br/>
+ input type="url" : <input type="url"/><br/>
+ input type="week" : <input type="week"/><br/>
+
+ <h3>
+
+ Browser 지원 유무는 확인 필요<br/>
+ W3C는 HTML 표준만 제정 강제하지 않으며, 이로 인한 웹브라우저 전쟁(?)이 시작됨
+
+ </h3>
+
+  
+ </BODY>
+</HTML>

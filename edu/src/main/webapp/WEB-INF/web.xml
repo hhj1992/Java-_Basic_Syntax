@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<web-app xmlns="http://Java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  version="3.0"
+  metadata-complete="true">
+
+	<servlet>
+		<servlet-name>FirstServlet</servlet-name>
+		<servlet-class>FirstServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ServletTest</servlet-name>
+		<servlet-class>ServletTest</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>HelloServletService</servlet-name>
+		<servlet-class>HelloServletService</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>HelloServletdoGet</servlet-name>
+		<servlet-class>HelloServletdoGet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>HelloServletdoPost</servlet-name>
+		<servlet-class>HelloServletdoPost</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>GetData</servlet-name>
+		<servlet-class>GetData</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>GetDataKr</servlet-name>
+		<servlet-class>GetDataKr</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>PostData</servlet-name>
+		<servlet-class>PostData</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>GetDataKrATagServletMapping</servlet-name>
+		<servlet-class>jw02.GetDataKrATagServletMapping</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>MultiCheck01</servlet-name>
+		<servlet-class>jw02.MultiCheck01</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>MultiCheck02</servlet-name>
+		<servlet-class>jw02.MultiCheck02</servlet-class>
+	</servlet>
+		
+	<servlet>
+		<servlet-name>MultiCheck03</servlet-name>
+		<servlet-class>jw02.MultiCheck03</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>Login</servlet-name>
+		<servlet-class>jw04.Login</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>LoginBean</servlet-name>
+		<servlet-class>jw04.LoginBean</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>LoginBeanVODao</servlet-name>
+		<servlet-class>jw04.LoginBeanVODao</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>LoginBeanInitParam</servlet-name>
+		<servlet-class>jw04.LoginBeanInitParam</servlet-class>
+		<init-param>
+        	<param-name>jdbcDriver</param-name>
+        	<param-value>oracle.jdbc.driver.OracleDriver</param-value>
+    	</init-param>
+    	<init-param>
+        	<param-name>jdbcURL</param-name>
+        	<param-value>jdbc:oracle:thin:@127.0.0.1:1521:xe</param-value>
+    	</init-param>
+		<init-param>
+        	<param-name>jdbcUser</param-name>
+        	<param-value>scott</param-value>
+    	</init-param>
+		<init-param>
+        	<param-name>jdbcPasswd</param-name>
+        	<param-value>tiger</param-value>
+    	</init-param>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>LoginBeanPool</servlet-name>
+		<servlet-class>jw04.LoginBeanPool</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>LoginBeanDataSource</servlet-name>
+		<servlet-class>jw04.LoginBeanDataSource</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>CookieReaderToServer</servlet-name>
+		<servlet-class>jw05.CookieReaderToServer</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>CookieWriterToClient</servlet-name>
+		<servlet-class>jw05.CookieWriterToClient</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>SessionUseCookieOne</servlet-name>
+		<servlet-class>jw05.SessionUseCookieOne</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>SessionUseCookieTwo</servlet-name>
+		<servlet-class>jw05.SessionUseCookieTwo</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>LoginBeanDataSourceSession</servlet-name>
+		<servlet-class>jw05.LoginBeanDataSourceSession</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>ServletSynchronized</servlet-name>
+		<servlet-class>jw05.ServletSynchronized</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>Make405Error</servlet-name>
+		<servlet-class>jw05.Make405Error</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>MakeNullPointerException</servlet-name>
+		<servlet-class>jw05.MakeNullPointerException</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>NullErrorDisplay</servlet-name>
+		<servlet-class>jw05.NullErrorDisplay</servlet-class>
+	</servlet>
+	
+	
+	
+	<servlet-mapping>
+		<servlet-name>NullErrorDisplay</servlet-name>
+		<url-pattern>/NullErrorDisplay</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>MakeNullPointerException</servlet-name>
+		<url-pattern>/MakeNullPointerException</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>Make405Error</servlet-name>
+		<url-pattern>/Make405Error</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>ServletSynchronized</servlet-name>
+		<url-pattern>/ServletSynchronized</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>LoginBeanDataSourceSession</servlet-name>
+		<url-pattern>/LoginBeanDataSourceSession</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>SessionUseCookieTwo</servlet-name>
+		<url-pattern>/SessionUseCookieTwo</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>SessionUseCookieOne</servlet-name>
+		<url-pattern>/SessionUseCookieOne</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>CookieWriterToClient</servlet-name>
+		<url-pattern>/CookieWriterToClient</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>CookieReaderToServer</servlet-name>
+		<url-pattern>/CookieReaderToServer</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>LoginBeanDataSource</servlet-name>
+		<url-pattern>/LoginBeanDataSource</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>LoginBeanPool</servlet-name>
+		<url-pattern>/LoginBeanPool</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet-mapping>
+		<servlet-name>LoginBeanInitParam</servlet-name>
+		<url-pattern>/LoginBeanInitParam</url-pattern>
+	</servlet-mapping>
+		
+	<servlet-mapping>
+		<servlet-name>LoginBeanVODao</servlet-name>
+		<url-pattern>/LoginBeanVODao</url-pattern>
+	</servlet-mapping>
+		
+	<servlet-mapping>
+		<servlet-name>LoginBean</servlet-name>
+		<url-pattern>/LoginBean</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>Login</servlet-name>
+		<url-pattern>/Login</url-pattern>
+	</servlet-mapping>
+		
+	<servlet-mapping>
+		<servlet-name>MultiCheck03</servlet-name>
+		<url-pattern>/MultiCheck03</url-pattern>
+	</servlet-mapping>	
+		
+	<servlet-mapping>
+		<servlet-name>MultiCheck02</servlet-name>
+		<url-pattern>/MultiCheck02</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>MultiCheck01</servlet-name>
+		<url-pattern>/MultiCheck01</url-pattern>
+	</servlet-mapping>
+
+	
+	<servlet-mapping>
+		<servlet-name>GetDataKrATagServletMapping</servlet-name>
+		<url-pattern>/GetDataKrATagServletMapping</url-pattern>
+	</servlet-mapping>
+
+	
+	<servlet-mapping>
+		<servlet-name>PostData</servlet-name>
+		<url-pattern>/PostData</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>GetDataKr</servlet-name>
+		<url-pattern>/GetDataKr</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>GetData</servlet-name>
+		<url-pattern>/GetData</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>HelloServletdoPost</servlet-name>
+		<url-pattern>/HelloServletdoPost</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>HelloServletdoGet</servlet-name>
+		<url-pattern>/HelloServletdoGet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>HelloServletService</servlet-name>
+		<url-pattern>/HelloServletService</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ServletTest</servlet-name>
+		<url-pattern>/ServletTest</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>FirstServlet</servlet-name>
+		<url-pattern>/FirstServlet</url-pattern>
+	</servlet-mapping>
+	
+	<resource-ref>
+		<res-ref-name>jdbc/ora</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+	
+	<!-- 선언적 예외처리 
+	<error-page>
+		<error-code>405</error-code>
+		<location>/jw05/405ErrorDisplay.html</location>
+	</error-page>
+	
+	<error-page>
+		<exception-type>java.lang.NullPointerException</exception-type>
+		<location>/NullErrorDisplay</location>
+	</error-page>
+	 -->
+</web-app>

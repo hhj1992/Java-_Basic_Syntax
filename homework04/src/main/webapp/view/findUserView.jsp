@@ -1,0 +1,59 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>정보 찾기</title>
+    </head>
+    <style>
+        table,html, body,tr,td,th{margin:0;padding: 0;border: 0;}
+        #wrap{display: flex; justify-content: center;flex-direction: column;align-items: center;margin-top: 100px;}
+        .th {display: inline-block; width: 100px;}
+        h1{margin-top: 0; border-bottom:2px solid rgb(77, 121, 172);}
+        #form-box { border-radius: 20px; padding: 20px; box-shadow: 2px 2px 5px rgb(175, 175, 175);} 
+        #form-box input[type=text]{width: 50px;}
+        #form-box div:nth-child(2){margin-bottom: 10px;}
+        #form-box .btn-box { text-align: right; margin-top: 30px;}
+        #form-box .btn-box .input-btn{ background-color: rgb(77, 121, 172); border: 0;border-radius: 5px; color: #fff;padding:3px 7px;}
+        #form-box .btn-box .input-btn:active{background-color: rgb(51, 90, 134);}
+    </style>
+    <body>
+        <div id="wrap">
+            <form id = "form-box" action="../jsp/findUser.jsp" method="post">
+                <h1>정보 찾기</h1>
+                <div>
+                    <span class="th">이름</span>
+                    <input name="name" type="text">
+                </div>
+                <div>
+                    <span class="th">생년월일</span>
+                    <input type="text" name="year">년
+                    <select name="month" id="sel_mon">
+                        <option >선택</option>
+                    </select>
+                    <span>월</span>
+                    <select name="day" id="sel_day">
+                        <option >선택</option> 
+                    </select>
+                </div>
+                <div class="btn-box">
+                    <input class="input-btn" type="submit" value="전송">
+                    <input class="input-btn" type="reset" value="취소">
+                </div>
+            </form>
+        </div>
+    </body>
+    <script text="script">
+        var selDay = document.querySelector("#sel_day");
+        var selmon = document.querySelector("#sel_mon");
+        selectOption(selmon,12);
+        selectOption(selDay,31);
+
+        function selectOption(variable, num ) {
+            for (let index = 1; index <= num; index++) {
+                variable.innerHTML += "<option value=\""+index+"\">"+index+"</option>";
+            }
+        }
+    </script>
+</html>

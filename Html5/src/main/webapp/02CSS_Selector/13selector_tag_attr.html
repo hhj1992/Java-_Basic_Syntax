@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+	<meta charset="EUC-KR">
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+		body{color : #051B38; text-align: center ;font-family: 'Nanum Pen Script', cursive;}
+		/* form {font-family: 'Nanum Pen Script', cursive;}
+		form p{font-size: 60px;}
+		form[name="test01"] p {color: #FBA7AB;}
+		form[name="test03"] div {color: #B5E196;} */
+		input:focus {background-color: #B5E196}
+		input[type="radio"]:checked{background-color:#1F4B00; }
+		
+		input:checked {height: 40px; width: 40px}
+		
+	</style>
+	
+</head>
+
+<body>
+
+	<form method='post' name="myForm">
+	
+		이름<input type='text' name='name' value='이름입력'><br>
+		주소<input type='text' name='addr' ><br><p>
+
+		사용중인 소프트웨어 선택<br>
+		<input type='checkbox' name='sw' value='hwp' checked="checked">hwp<br>
+		<input type='checkbox' name='sw' value='MS/WORD' checked="checked">MS/WORD<br>
+		<input type='checkbox' name='sw' value='EXCEL'>EXCEL<br><p>
+
+		사용중인 OS 선택<br>
+		<input type='radio' name='os' value='win2000' checked="checked">win2000<br>
+		<input type='radio' name='os' value='linux'>리눅스<br><p>
+
+		사용중인 CPU 선택<br>
+		<input type='radio' name='cpu' value='i3'>i3<br>
+		<input type='radio' name='cpu' value='i5'>i5<br>
+		<input type='radio' name='cpu' value='i7' checked="checked">i7<br>
+
+		<input type="button"  value='button전송'>
+		<input type="submit" value="submit전송">
+		<input type='reset' value='취소'>
+	
+	</form>
+
+</body>
+
+</html>

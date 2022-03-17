@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+	<meta charset="EUC-KR">
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+		body{color : #051B38; text-align: center ;font-family: 'Nanum Pen Script', cursive;}
+		form:first-child {background-color: #FFFBAA;}
+		form:last-child {background-color: #555100;}
+		form {font-size: 20px}
+		/* form:nth-child(n) {background-color: #F5A3AD} */
+		form:nth-child(2n) {background-color: #F5A3AD}
+		form:nth-child(2n+1) {background-color: #0F5935}
+		form[name]:active {background-color: #2E1557;color: #fff}
+		form:hover {font-weight: bold}
+		input:hover {color: #fff; border-right: 10px;}
+	</style>
+	
+</head>
+
+<body>
+
+	<form method='post' name="myForm">
+	
+		이름<input type='text' name='name' value='이름입력'><br>
+		주소<input type='text' name='addr' ><br><p>
+
+		사용중인 소프트웨어 선택<br>
+		<input type='checkbox' name='sw' value='hwp' checked="checked">hwp<br>
+		<input type='checkbox' name='sw' value='MS/WORD' checked="checked">MS/WORD<br>
+		<input type='checkbox' name='sw' value='EXCEL'>EXCEL<br><p>
+
+		사용중인 OS 선택<br>
+		<input type='radio' name='os' value='win2000' checked="checked">win2000<br>
+		<input type='radio' name='os' value='linux'>리눅스<br><p>
+
+		사용중인 CPU 선택<br>
+		<input type='radio' name='cpu' value='i3'>i3<br>
+		<input type='radio' name='cpu' value='i5'>i5<br>
+		<input type='radio' name='cpu' value='i7' checked="checked">i7<br>
+
+		<input type="button"  value='button전송'>
+		<input type="submit" value="submit전송">
+		<input type='reset' value='취소'>
+	
+	</form>
+	
+		
+	<form>
+		<p>두번째 Form</p>
+	</form>
+	
+	<form>
+		<p>세번째 Form</p>
+	</form>
+	
+	<form>
+		<p>네번째 Form</p>
+	</form>
+	
+</body>
+
+</html>

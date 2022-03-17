@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<!-- CDN(Content Delivery Network) 호스트 사용 -->
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	
+	<script type="text/javascript">
+	
+		$(function() {
+			
+		
+			//==> DOM Object GET 3가지 방법 ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
+			 $( "input" ).on("click" , function() {
+				 
+				 alert("확인 1");
+
+				 $.ajax( 
+						 {
+							url : "https://dapi.kakao.com/v2/search/image?query="+encodeURIComponent("유현진")+"&page=1&size=1",
+							method : "GET" ,
+							headers : {
+								"Authorization" : "KakaoAK 0cbf8b943ca75e32e64185e398da92d6"
+							},
+							success : function(JSONData , status) {
+
+								//Debug...
+								alert(status);
+								//Debug...
+								alert("JSONData : \n"+JSONData);
+								alert( "JSON.stringify(JSONData) : \n"+JSON.stringify(JSONData) );
+							
+							}
+						}
+				); // end of  $.ajax()
+			});
+
+		});
+		
+	</script>
+
+</head>
+
+<body>
+	<input type="button" value="검색" />
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

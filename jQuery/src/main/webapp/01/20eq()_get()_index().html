@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="euc-kr">
+	
+	<script src="../javascript/jquery-2.1.4.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		
+		$(document).ready(function() {
+			
+			//1번
+			
+			var value = "";
+			var obj = $("p");
+			
+	        alert("$('p')" + obj.size());
+	        alert("obj.eq(0).html() : \n\n" + obj.eq(0).html());
+	        alert("$('p]').eq(0).html() : \n\n " + $('p]').eq(0).html());
+	        alert("$('p]').eq(1).html() : \n\n " + $('p]').eq(1).html());
+	        alert("$('p]').eq(2).html() : \n\n " + $('p]').eq(2).html());
+
+	        $("form").eq(1).css("color","red");
+	        
+			//2번
+			/*
+	        var formArr = $("form").get();
+	        // 위와 비교해보기
+	        //var formArr = $("form");
+			
+	        alert($(formArr[0]).html());
+			alert($(formArr[0]).html().trim());
+
+			var value ="";
+
+			var obj = $(formArr);
+			// obj.each(function(index,el){
+				
+			$(formArr).each(function(index,el){
+
+			// $($("form").get()).each(function(index,el){
+			// $($("form")).each(function(index,el){
+
+				value+= (index + 1 ) + " : " + $(el).html().trim()+"\n";
+				alert(value);
+			})
+
+
+			// 3번
+			/*
+			var obj = $("form").get(0);
+			alert($(obj).html().trim());
+			alert( $($("form")).get(1).html().trim() );
+
+			// 4번
+			/*
+			var index = $("form").index($("form[name=test01]"));
+			alert(index);
+			alert($("form").index($("form[name=test02]")));
+			alert($("form").index($("form[name=test03]")));
+			alert($("p").index($("p:contains('javascript')")));
+			*/
+		});
+		
+		
+	</script>
+</head>
+<body>
+   <h1>javascript framework : jquery 학습</h1>
+	<h2>사용법(?)에 익숙해 지자 </h2>
+      
+   <form name="test01">
+      <p>jquery 란 ? </p>
+   </form>
+   
+   <div>
+      <p> javascript framework</p>
+   </div>
+   
+   <form name="test02">
+      <p>framework 이란 ?
+         <span> 확장,재사용 가능한 lib</span>
+      </p>
+   </form>
+   
+</body>
+</html>

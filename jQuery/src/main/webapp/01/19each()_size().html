@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	
+	<script src="../javascript/jquery-2.1.4.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		
+		$(document).ready(function() {
+			 
+			 
+			 var obj = $("p");
+	         alert("$('p').size()" + obj.size());
+	         alert("$('p').length" + obj.length);
+
+	         
+	         //1번
+	         var value = "";
+	         var i = 0;
+	         
+	         obj.each(function() {
+				i++;
+				value += i +" : " + $(this).html()+"\n";
+				alert(value);
+			})
+			
+			/*
+	         //2번
+	         var value = "";
+	         var i = 0;
+	         
+	         obj.each(function(index, el) {
+	        	 value += (index + 1 ) +" : " + $(el).html()+"\n";
+	        	 //value += (index + 1 ) +" : " + $(this).html()+"\n";
+				alert(value);'
+			})
+			*/
+			/*
+			//3번
+			 var value = "";
+	         var i = 0;
+	         
+	         obj.each(function(index, el) {
+	        	 //value += (index + 1 ) +" : " + $(el).html()+"\n";
+	        	 value += (index + 1 ) +" : " + $(this).html()+"\n";
+				alert(value);'
+			})
+			*/
+	         
+	         //4번
+	         /*
+	         alert("$('form') : \n\n"+$('form').size());
+	         alert("$('form') : \n\n"+$('form').length);
+	         
+	         alert("$('form')[0] : \n\n"+$($('form')[0]).html());
+	         alert("$('form')[0] : \n\n"+$($('form')[0]).html().trim());
+	         alert("$('form')[1] : \n\n"+$($('form')[1]).html());
+	         alert("$('form')[1] : \n\n"+$($('form')[1]).html().trim());
+	
+	         alert("$('form')[0] : \n\n"+$($('form')[0]).text());
+	         alert("$('form')[0] : \n\n"+$($('form')[0]).text().trim());
+	         alert("$('form')[1] : \n\n"+$($('form')[1]).text());
+	         alert("$('form')[1] : \n\n"+$($('form')[1]).text().trim());
+	         */
+         
+         
+		});
+		
+		
+	</script>
+</head>
+<body>
+   <h1>javascript Framework : jQuery 학습</h1>
+	<h2>사용법(?)에 익숙해 지자 </h2>
+      
+   <form name="test01">
+      <p>jQuery 란 ? </p>
+   </form>
+   
+   <div>
+      <p> javascript Framework</p>
+   </div>
+   
+   <form name="test02">
+      <p>Framework 이란 ?
+         <span> 확장,재사용 가능한 Lib</span>
+      </p>
+   </form>
+   
+</body>
+</html>

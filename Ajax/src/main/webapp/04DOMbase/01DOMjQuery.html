@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="EUC-KR">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="/Ajax/10common/logUtil03.js"></script>
+	<script type="text/javascript">
+		// field
+		var index = 1;
+		
+		// Event function
+		function onClickAppend(e){
+			//console.log("z");
+			 index++;
+			 //console.log(e.currentTarget);
+			 $("body").append("<div id="+index+">이순신"+index+"</div>");
+		};
+		
+		// jQuery  
+		$(document).ready(function(){
+			 //console.log("hello");
+			 var btn = $("input:button");
+			 btn.on("click" ,onClickAppend);
+	 	})
+	</script>
+		 
+</head>
+
+<body>
+
+	<!-- <input type="button" value="추가" onclick="javascript:appendNode()"/> -->
+	<input type="button" value="추가"/>
+
+	<div id="append1">이순신1</div>
+	
+	<div id="console" style="border: 3px solid #F00" >
+		log 출력 :  <br/>
+	</div>
+	
+</body>
+
+</html>

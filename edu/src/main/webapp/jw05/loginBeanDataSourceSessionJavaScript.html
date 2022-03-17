@@ -1,0 +1,50 @@
+<html>
+<head></head>
+
+	<script language='javascript'>
+		
+			function checkForm(formData){
+					//id 입력확인
+					if( formData.id.value == ""){
+						alert("id를 입력하세요");
+						return false;
+					}
+					//pwd 입력확인
+					if( formData.pwd.value == ""){
+						alert("pwd를 입력하세요");
+						return false;
+					}
+					//확인 비밀번호 입력확인
+					if( formData.pwdConfirm.value == ""){
+						alert("확인 비밀 번호를 입력하세요");
+						return false;
+					}
+					//비밀번호와 확인 비밀번호 값 동일한지 확인
+					if( !(formData.pwdConfirm.value == formData.pwd.value) ){
+						alert("비밀번호와 상이 합니다.");
+						return false;
+					}
+					return true;
+				}
+	
+	</script>
+
+<body>
+
+	<center><h2>Login Test </h2></center>
+	
+	<!--  server 전송 전 JavaScript 이용:: Client Side Validation Chectk-->
+	<form method="Post" action="/edu/LoginBeanDataSourceSession" 
+				name='loginForm'  onSubmit="return checkForm(this)">
+
+		Id &nbsp;&nbsp;&nbsp;<input type='text' name='id' /><br/>
+		pwd <input type='text' name='pwd' /><br/><p/>
+		pwd 확인<input type='password' name='pwdConfirm' /><br/><p/>
+
+		<input type='submit' value='로그인' />
+		<input type='reset' value='취소' />
+	
+	</form>
+
+</body>
+</html>

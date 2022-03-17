@@ -1,0 +1,47 @@
+<html>
+<head>
+
+	<script language="javascript">
+		<!-- 
+		//javascript를 지원하지 않는 브라우저의 경우 이부분은 주석으로 인식  <!--  -->
+		function checkNull(memberForm){
+			//document 객체로로 접근하여 값 추출(절대경로(?))
+			var name = document.myform.myname.value;
+			var passwd=document.myform.mypasswd.value;
+			
+			//myform을 checkNul(memberForm)으로 받았으므로 아래도 가능(상대경로(?))
+			var email=memberForm.myemail.value;
+
+			//index로 접근하기
+			var addr=document.forms[0].elements[3].value;
+
+			//name,passwd가 입력값이 없으면 없다는 표시로 window창 열고
+			if(name=="" || passwd==""){
+					alert('이름.패스워등 입력되지 않음!!!'); //alert창 open
+			} else{
+						//name,passwd값이 있으면 window창에 보여주고
+						var str="입력한 이름"+name+"패스워드"+passwd+
+										", 이메일"+email+", 주소"+addr+"입니다.";
+						alert(str);
+						// 확인 button click시  else 조건을 만족하면 action='/servlet/aaa' 으로 data 전송
+						document.myform.submit();
+			}
+		} 
+		-->
+ </script>
+
+</head>
+<body>
+
+	<form method='get' action='/edu/aaa' name='myform'>
+			name : <input type='text' name='myname'/><br/>
+			pass : <input type='text' name='mypasswd'/><br/> 
+			email : <input type='text' name='myemail'/><br/>
+			addr &nbsp; <input type='text' name='myaddr'/><br/>
+			<!-- javascript  button onClick event시 : form 객체를 넘김-->
+			<input type='button' value='입력완료' onClick='checkNull(this.form)'/>
+			<input type='reset' value='다시쓰기'/>
+	</form>
+
+</body>
+</html>

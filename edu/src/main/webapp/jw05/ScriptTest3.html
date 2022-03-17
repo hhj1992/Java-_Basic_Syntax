@@ -1,0 +1,61 @@
+<html>
+<head>
+	<title>select,textarea test</title>
+	<script language=JavaScript>
+		<!--
+			function view(form){
+
+				var str="운동1"
+				for(i=0;i<form.sport.length;i++){
+					if(form.sport.options[i].selected){
+						str = str+"\n"+form.sport.options[i].text+":"+form.sport.options[i].value+"\n"
+					}
+				}
+
+				var str1 ="운동2"
+				for(i=0;i<form.sport1.length;i++){
+					if(form.sport1.options[i].selected){
+					str1= str1+"\n"+form.sport1.options[i].text+":"+form.sport1.options[i].value+"\n"
+					}
+				}
+
+				var str2 ="의견 : " + form.note1.value +"\n"
+				var str3 ="건의사항 : " + form.note2.value
+				var total=str+str1+str2+str3
+				alert(total)
+			}
+		-->
+	</script>
+</head>
+<body>
+	<form method='get' action="/edu/aaa">
+	
+		촣아하는 운동은 ?<br>
+		<select name=sport size=5 multiple>
+			<option value=baseball selected>야구
+			<option value=축구 >축구
+			<option value=배구 >배구
+			<option value=농구>농구
+		</select><p>
+		
+		촣아하는 운동은 2 ?<br>
+		<select name=sport1 size=3 >
+			<option value=baseball>야구
+			<option value=축구>축구
+			<option value=배구 selected>배구
+			<option value=농구>농구
+		</select><p>
+		
+		의견<br>
+		<textarea name=note1 rows=10 cols=40>의견을 적어주세요.....</textarea><p>
+
+		건의사항<br>
+		<textarea name=note2 rows=5 cols=10>	</textarea><p>
+
+		<input type=submit value=전송>
+		<input type=reset value=취소><p>
+		<input type=button value="server로 보낼내용 확인" onclick=view(this.form)>
+	
+	</form>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="euc-kr">
+	
+	<script src="../javascript/jquery-2.1.4.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		
+		//1번
+		$(document).ready(function() {
+			var div = $("div");
+			//$($("div").get()).append('<p>동적으로추가된내용입니다.</p>').css("color","red");
+			div.append('<p>동적으로추가된내용입니다.</p>').css("color","red");
+		});
+
+		//2번
+		//$($("div").get()).append('<p>동적으로추가된내용입니다.</p>').css("color","red");
+		
+	</script>
+</head>
+<body>
+   <h1>javascript framework : jquery 학습</h1>
+	<h2>사용법(?)에 익숙해 지자 </h2>
+      
+   <form name="test01">
+      <p>jquery 란 ? </p>
+   </form>
+   
+   <div>
+      <p> javascript framework</p>
+   </div>
+   
+   <form name="test02">
+      <p>framework 이란 ?
+         <span> 확장,재사용 가능한 lib</span>
+      </p>
+   </form>
+   
+</body>
+	<script type="text/javascript">
+		//$($("div").get()).append('<p>동적으로추가된내용입니다.</p>').css("color","red");
+		div.append('<p>동적으로추가된내용입니다.</p>').css("color","red");
+	</script>
+</html>

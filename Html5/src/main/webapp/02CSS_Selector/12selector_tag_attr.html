@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+	<meta charset="EUC-KR">
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+		body{color : #051B38; text-align: center ;font-family: 'Noto Sans KR', sans-serif;}
+		form {font-family: 'Nanum Pen Script', cursive;}
+		form p{font-size: 60px;}
+		form[name="test01"] p {color: #FBA7AB;}
+		form[name="test03"] div {color: #B5E196;}
+		
+	</style>
+	
+</head>
+
+<body>
+
+	<h1>CSS 학습</h1>
+	<h2>사용법(?)에 익숙해 지자 </h2>
+	
+	<hr/>
+		
+	<form id="firstForm" class="abc" name="test01">
+		<p>CSS 란 ? </p>
+	</form>
+	
+	<hr/>
+	
+	<div>
+		<p>Cascading Style Sheets</p>
+	</div>
+	
+	<hr/>
+	
+	<form id="secondForm" class="def" >
+		<p>Style Sheets ?
+			<span> 웹 문서의 전반적인 스타일을 미리 저장해 둔 스타일시트</span>
+		</p>
+	</form>
+	
+	<hr/>
+	
+	<!-- CSV 로 class 는 여러개를 사용할 가능 -->
+	<form id="thirdForm" class="abc def" name="test03">
+		<p>용어정리</p>
+		<div>Style Sheet : style Tag 내에 입력된 코드</div>
+		<div>CSS Block : selector { ~~~ } </div>
+	</form>
+
+</body>
+
+</html>

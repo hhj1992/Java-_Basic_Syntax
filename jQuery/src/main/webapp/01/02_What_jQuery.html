@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<!-- 
+	■ css(Cascading Style Sheets) 작성 
+	■ static contents + style(Design) 뒤섞여 있다
+	■ html 과 style 를 분리하자
+ -->
+<html>
+
+<head>
+	<meta charset="EUC-KR">
+	<script src="../javascript/jquery-2.1.4.js"></script>
+	<script type="text/javascript">
+	function change(e) {
+		e.style.color ="red";
+	}
+	
+	$(document).ready(function () {
+		$("span").click(function() {
+			console.log("zz");
+			$(this).css("color", "red");
+		})
+	});
+	
+	window.onload = function() {
+		alert("element 파싱, load 완료 시점 alert 창 open \n\n window.onload() 사용")
+	}
+	
+	$(document).ready(function () {
+		alert("element 파싱, load 완료 시점 alert 창 open \n\n $(document).ready() 사용")
+	});
+	$(function () {
+		alert("element 파싱, load 완료 시점 alert 창 open \n\n jQuery $() 사용")
+	})
+	</script>
+</head>
+
+<body>
+   
+   <!-- [방법1] javascript 이용 : onclink Event 발생시 호출되는 function 등록 -->
+   <div onclick="javascript:change(this)">
+      jQuery : javascript Framework<br/>
+   </div>
+   
+   <hr/>
+   
+   <!-- [방법2] jQuery Framework 이용  -->
+   <span>
+      - 모든 부라우저에서 동작하는(Cross Browser) 클라이언트 javascript Lib.<br/>
+      - DOM(Document Object Model) 과 관련되 처리를 쉽계 구현<br/>
+      - 일관된 이벤트 연결을 쉽게 구현<br/>
+      -  Ajax Application 구현을 쉽게<br/>
+   </span>
+
+</body>
+	
+</html>

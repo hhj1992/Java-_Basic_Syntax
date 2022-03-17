@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="EUC-KR">
+	
+	<script type="text/javascript">
+	
+		//=======================================================//
+		// XMLHttpRequest Object GET
+		console.log("hello");
+		var request = null;
+		function createRequest() {
+			try{
+				// IE이외의 브라우저는 아래 방식
+				request = new XMLHttpRequest();
+				
+				alert ("XMLHttpRequest() 로 request instancet생성완료");
+			}catch(trymicrosoft){
+				try{
+					// IE ActiveX component 이용
+					request = new ActiveXObject("Msxml2.XMLHTTP");
+					
+					alert ("ActiveXObject(Msxml2.XMLHTTP) 로 request instancet생성완료");
+				}catch(othermicrosoft){
+					try{
+						// Microsoft.XMLHTTP를 마지막으로 사용하는 이유 : Microsoft.XMLHTTP가 신버전이기 때문.
+						request =new ActiveXObject("Microsoft.XMLHTTP");
+						
+						alert ("new ActiveXObject(Microsoft.XMLHTTP) 로 request instancet생성완료");
+					}catch(failed){
+						request = null;
+					}
+				}
+			}
+			
+			if( request == null ){
+				alert ("request객체 생성시 error 발생함.");
+			}
+		}
+		
+			
+		
+	
+		//phone 번호를 server로 GET 방식 전송 function    
+		function getSold(){
+			
+			createRequest();
+
+			//XML HttpRequest  객체 생성
+			var url ="calcServerAjax.jsp";
+			
+			//request GET 방식 , 해당url , 비동기로 연결할 것을 결정 : 연결초기화
+			request.open("GET",url,true);
+			//request.open("GET",url,false);
+			// true 인경우 = 비동기 , false = 동기
+			
+	 		//updatePage()호출 지정(Call Back function 지정)			
+			request.onreadystatechange =  updatePage;
+	 		
+	 		console.log("==> request.readyState = "+request.readyState);
+			// post 방식일땐 send에다가 전송
+	 		request.send(null);
+	 		
+	 		console.log("==> request.readyState = "+request.readyState);
+	 		console.log("==> request.readyState = "+request.readyState);
+	 		console.log("==> request.readyState = "+request.readyState);
+	 		//alert(request.readyState);
+	 		
+		}
+		
+		//Call Back Method 
+		function updatePage(){
+			if(request.readyState == 4){
+				
+				if( request.status == 200 ){
+					var serverData = request.responseText;
+					
+					serverData = trim(serverData);
+					
+					alert("server로 부터 받은 판매 갯수 : " +serverData);
+					//변경시킬 판매갯수 element GET 
+	                var spanSoldElem = document.getElementById("sold");
+	   
+	               	//spanSoldElem.innerHTML(serverData);
+	               //판매갯수변경
+	               //==>spanSoldElem의 첫번째 자식노드 remove
+	               spanSoldElem.removeChild(spanSoldElem.firstChild);
+	               //==>변경시킬 판매갯수를 text를 textNode생성
+	               var newNode01 = document.createTextNode(serverData);
+	               //==> spanSoldElem에 차식노드추가  
+	                spanSoldElem.appendChild(newNode01);
+	             
+	   
+	                //총 매출금액 계산 및 변경
+	                //==> 판매단가 가져오기 
+	                var spanPriceElem = document.getElementById("price");
+	                //==> spanPriceElem의 첫번째 자식노드 value가져오니(==> 100원) 
+	                var price = spanPriceElem.firstChild.nodeValue;
+	                //==>매출 금액 계산 
+	                var cash = serverData * price;
+	                //변경시킬 매출금액  element 가저오기 
+	                var spanCashElem = document.getElementById("cash");
+	               //총 매출 금액 변경하기.
+	               //==>spanCashElem의 첫번째 자식노드 remove
+	               spanCashElem.removeChild(spanCashElem.firstChild);
+	               //==>변경시킬 판매갯수를 text를 textNode생성
+	               var newNode02 = document.createTextNode(cash);
+	               //==> spanSoldElem에 자식노드추가  
+	                spanCashElem.appendChild(newNode02);
+				}else{
+					
+					alert("에러발생" + request.status + "==> "+  request.responseText);
+					
+				}
+			}
+		}
+		//trim 정의 Function
+		function trim(str) {  
+			return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+		} 
+		
+	</script>
+	
+</head>
+
+<body>
+
+   <h1> 판매 보고서</h1>
+
+   <table>
+      <tr>
+         <th>판매된 상품 갯수</th>
+         <td><span id="sold">100</span></td>
+      </tr>
+      <tr>
+         <th>상품 단가</th>
+         <td><span id="price">100</span>원</td>
+      </tr>
+   </table>
+   
+   <h2>총 매출금액  : <span id="cash">100,00원</span></h2>
+   
+   <form  method="POST" action="calcServerNormal.jsp">
+      <input type="submit" value="판매보고서 다시보기(기존방식)">
+   </form>
+   
+   <form>
+      <input type="button" value="판매보고서 다시보기(ajax적용)"  onClick="javascript:getSold()">
+   </form>
+
+</body>
+
+</html>
+
+<!--
+ User Definition javascript  : trim() 공백제거 
+ 
+function trim(value) {
+ return value.replace(/^\s+|\s+$/g,"");
+}
+
+function ltrim(value) {
+ return value.replace(/^\s+/,"");
+}
+
+function rtrim(value) {
+ return value.replace(/\s+$/,"");
+} 
+
+- javascript 공백제거를 하는 trim() function 미제공
+- 정규표현식을 사용하여 공백을 제거한다.
+
+정규표현식
+^ - 처음시작(beginning of line)
+\s - 공백(whitespace character)
+$ - 끝라인(end of line)
+
+function trim(str) {  
+    return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');  
+}  
+String.prototype.trim = function() {  
+    return this.replace(/^\s\s*/, '').replace(/\s\s*$/, '');  
+}  
+-->

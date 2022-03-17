@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<!-- 
+	■ static contents / style(Design) 분리
+	
+	■ CSS Selector : HTML element 에 접근하는 Syntax
+		- HTML element name 접근 	: span{~~}
+		- class attribute 접근 			: .abc{~~}
+		- id attribute 접근					: #uniqueId{~~}
+		
+	■ 스티일 선언이 위에서 아래로 순차적적용, 마지막에 선언된 스타일이 우선순위 갖음
+  	■ 실제 화면에 표시되는 방법을 기술하는 언어로 HTML의 레이아웃과 스타일 정의한다.
+ -->
+<html lang="ko">
+
+<head>
+	<meta charset="EUC-KR">
+	
+	<!--  style Tag 내부에 임력된 코드를 "Style Sheets" 하한다. -->
+	<style type="text/css">
+		
+		/* 
+			아래와 같이 "CSS 블럭"에 Design(?) 기술.  
+			CSS Selector { name : value;  [, name :  value ] }
+		*/
+		
+		/* HTML Tag 이름 접근 ==> TagName*/
+		span {
+			background-color: yellow ; 
+			font-size: 12pt;
+		}
+		
+		/* class attribute 접근 ==> .className */
+		.abc{
+			background-color: green ; 
+			font-size: 12pt;
+		}
+		
+		/* id attribute 로 접근 ==> #idName */
+		#uniqueId01{
+			background-color: red ; 
+			font-size: 15pt;
+		}
+		#uniqueId02{
+			background-color: orange ; 
+			font-size: 15pt;
+		}		
+	</style>
+</head>
+
+<body>
+
+	<!--	
+		<div>  / <span>
+		: Block-Level Element 중 Div Tag(DIVision marker)
+		: 블록처리하여 여러조각처리 디자인, 관리 가능.
+		: div 줄바꿈  / span 줄바꿈 없다. 
+	-->
+	
+	<h1>CSS : Cascading Style Sheets</h1>
+	
+	<span > 
+		웹 문서의 전반적인 스타일(Design ? )을 미리 저장해 둔 스타일시트(Design Sheet ?)
+	</span>
+	<span class="abc">>
+		문서 전체의 일관성을 유지할 수 있고 세세한 스타일 지정을 줄여 이용에 편리
+	</span>
+	
+	<div id="uniqueId01">
+		HTML Tag 내에 직접 기술하여 다양하게 설계하고 수시로 변경하는데 많은 제약.<br/>
+  		이를 보완하기 위해 만들어진 것이 스타일 시트이고 스타일 시트의 표준안이 CSS이다.
+  	</div>	
+  	<div id="uniqueId02"> 
+		실제 화면에 표시되는 방법을 기술하는 언어로 HTML의 레이아웃과 스타일 정의한다
+  	</div>				
+
+</body>
+	
+</html>
